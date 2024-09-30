@@ -1,0 +1,37 @@
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\bin\Debug\pSC10.exe.config
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\bin\Debug\pSC10.exe
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\bin\Debug\pSC10.pdb
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.csproj.AssemblyReference.cache
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmStarts.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.Properties.Resources.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.csproj.GenerateResource.cache
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.csproj.CoreCompileInputs.cache
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.exe
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.pdb
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmDEPTO.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENDEPTO.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmMenu.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENFABRICA.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmFactura.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmMVTOCTE.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENCTE.resources
+C:\ITLA 2024\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENFACT.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\bin\Debug\pSC10.exe.config
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\bin\Debug\pSC10.exe
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\bin\Debug\pSC10.pdb
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.csproj.AssemblyReference.cache
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmDEPTO.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmFactura.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmMenu.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmMVTOCTE.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmPrductos.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmStarts.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENCTE.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENDEPTO.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENFABRICA.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.frmVENFACT.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.Properties.Resources.resources
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.csproj.GenerateResource.cache
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.csproj.CoreCompileInputs.cache
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.exe
+C:\ITLA 2024 C1\PRG1 SC10\pSC10\pSC10\obj\Debug\pSC10.pdb
