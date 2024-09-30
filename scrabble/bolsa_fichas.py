@@ -9,7 +9,6 @@ class BolsaDeFichas:
             'U': 6, 'V': 2, 'W': 1, 'X': 1, 'Y': 1, 'Z': 1, ' ': 2
         }
         self.bolsa = self.crear_bolsa()
-        self.mezclar_fichas()
 
     def crear_bolsa(self):
         return [letra for letra, cantidad in self.fichas.items() for _ in range(cantidad)]
@@ -21,14 +20,3 @@ class BolsaDeFichas:
         if cantidad > len(self.bolsa):
             raise ValueError("No hay suficientes fichas en la bolsa.")
         return [self.bolsa.pop() for _ in range(cantidad)]
-
-class Jugador:
-    def __init__(self, nombre):
-        self.nombre = nombre
-        self.fichas = []
-
-    def recibir_fichas(self, nuevas_fichas):
-        self.fichas.extend(nuevas_fichas)
-
-    def mostrar_fichas(self):
-        return self.fichas

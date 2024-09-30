@@ -1,42 +1,37 @@
-import random
-from bolsa_fichas import BolsaDeFichas, Jugador
-from tablero import mostrar_tablero, colocar_letras, calcular_puntaje
+from bolsa_fichas import BolsaDeFichas
+from tablero import ScrabbleBoard
+from validacion_palabra import cargar_diccionario, es_palabra_valida
+from control_turnos import mostrar_tablero, colocar_letras, robar_fichas
 
-# Turno del jugador
-def turno_jugador(fichas_jugador):
-    print("\nEs tu turno:")
-    mostrar_tablero()
-    print("Tus fichas:", fichas_jugador)
-
-    accion = input("Acción (poner/pasar): ").lower()
-
-    if accion == "pasar":
-        print("Has pasado tu turno.")
-        return False
-
-    elif accion == "poner":
-        colocar_letras(fichas_jugador)
-        return True
-
-# Turno de la IA (simplemente pasa)
-def turno_ia():
-    print("\nTurno de la IA.")
-    mostrar_tablero()
-    print("La IA ha pasado su turno. (Lógica de la IA no implementada)")
-
-# Inicialización del juego
 def main():
+    # Inicialización de la bolsa de fichas
     bolsa = BolsaDeFichas()
+    bolsa.mezclar_fichas()
 
-    nombre_jugador1 = input("Ingrese el nombre del jugador 1: ")
-    jugador1 = Jugador(nombre_jugador1)
+    # Inicialización del tablero
+    tablero = ScrabbleBoard()
 
-    jugador1.recibir_fichas(bolsa.sacar_fichas(7))
-    print(f"{jugador1.nombre} tiene las fichas: {jugador1.mostrar_fichas()}")
+    # Cargar el diccionario
+    diccionario = cargar_diccionario('diccionario.txt')
+
+    # Inicialización de los jugadores
+    fichas_jugador1 = bolsa.sacar_fichas(7)
+    fichas_jugador2 = bolsa.sacar_fichas(7)
 
     while True:
-        if not turno_jugador(jugador1.fichas):
-            turno_ia()
+        print("\nTurno del Jugador 1")
+        mostrar_tablero(tablero.board)
+        colocar_letras(tablero.board, fichas_jugador1)
+        
+        palabra = input("Introduce la palabra que formaste: ")
+        posiciones = [(int(input("Fila: ")), int(input("Columna: "))) for _ in palabra]
 
-if __name__ == "__main__":
-    main()
+        if es_palabra_valida(palabra, diccionario):
+            puntaje = tablero.calcular_puntaje_palabra(palabra, posiciones)
+            print(f"¡Puntaje para '{palabra}': {puntaje} puntos!")
+        else:
+            print("Palabra no válida.")
+        
+        # Turno del Jugador 2 o IA
+        print("\nTurno del Jugador 2")
+        colocar_letras(tablero.board, fichas_jugador2)

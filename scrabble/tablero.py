@@ -1,46 +1,44 @@
-# tablero.py
+class ScrabbleBoard:
+    def __init__(self):
+        self.size = 15
+        self.board = [[' ' for _ in range(self.size)] for _ in range(self.size)]
+        self.premium_squares = self.set_premium_squares()
+        self.puntos_letras = {
+            'A': 1, 'B': 3, 'C': 3, 'D': 2, 'E': 1, 'F': 4, 'G': 2, 'H': 4, 'I': 1, 'J': 8,
+            'K': 5, 'L': 1, 'M': 3, 'N': 1, 'O': 1, 'P': 3, 'Q': 10, 'R': 1, 'S': 1, 'T': 1,
+            'U': 1, 'V': 4, 'W': 4, 'X': 8, 'Y': 4, 'Z': 10
+        }
 
-# Crear un tablero vacío
-tablero = [[' ' for _ in range(15)] for _ in range(15)]
+    def set_premium_squares(self):
+        # Define los multiplicadores de palabra y letra (código previamente dado)
+        premium = {
+            'PT': [(0, 0), (0, 7), (0, 14), (7, 0), (7, 14), (14, 0), (14, 7), (14, 14)],
+            'PD': [(1, 1), (1, 13), (2, 2), (2, 12), (3, 3), (3, 11), (4, 4), (4, 10)],
+            'LT': [(1, 5), (1, 9), (5, 1), (5, 5), (5, 9), (9, 1)],
+            'LD': [(0, 3), (0, 11), (2, 6), (2, 8), (3, 0), (3, 7), (3, 14)]
+        }
+        return premium
 
-def mostrar_tablero():
-    print("\nTablero:")
-    for fila in tablero:
-        print(" ".join(fila))
+    def calcular_puntaje_palabra(self, palabra, posiciones):
+        puntaje = 0
+        multiplicador_palabra = 1
 
-def colocar_letras(fichas_jugador):
-    while True:
-        letra = input("Introduce una letra de tus fichas: ").upper()
-        if letra not in fichas_jugador:
-            print("No tienes esa letra. Intenta de nuevo.")
-            continue
+        palabra = palabra.upper()
+        for i, letra in enumerate(palabra):
+            letra_puntaje = self.puntos_letras.get(letra, 0)
+            x, y = posiciones[i]
+            casilla = (x, y)
 
-        fila = int(input("Fila (0-14): "))
-        col = int(input("Columna (0-14): "))
+            if casilla in self.premium_squares['LT']:
+                letra_puntaje *= 3
+            elif casilla in self.premium_squares['LD']:
+                letra_puntaje *= 2
 
-        if 0 <= fila < 15 and 0 <= col < 15 and tablero[fila][col] == ' ':
-            tablero[fila][col] = letra
-            fichas_jugador.remove(letra)
-            print(f"Letras colocadas: {letra} en ({fila}, {col})")
-            break
-        else:
-            print("Posición inválida. Intenta de nuevo.")
+            if casilla in self.premium_squares['PT']:
+                multiplicador_palabra *= 3
+            elif casilla in self.premium_squares['PD']:
+                multiplicador_palabra *= 2
 
-        continuar = input("¿Deseas seguir colocando letras? (si/no): ").lower()
-        if continuar != "si":
-            print("Turno de la IA.")
-            return
+            puntaje += letra_puntaje
 
-# Función para calcular la puntuación
-def calcular_puntaje(palabra):
-    puntaje = 0
-    letra_puntos = {
-        'A': 1, 'B': 3, 'C': 3, 'D': 2, 'E': 1, 'F': 4,
-        'G': 2, 'H': 4, 'I': 1, 'J': 8, 'K': 5, 'L': 1,
-        'M': 3, 'N': 1, 'Ñ': 8, 'O': 1, 'P': 3, 'Q': 10,
-        'R': 1, 'S': 1, 'T': 1, 'U': 2, 'V': 5, 'W': 4,
-        'X': 8, 'Y': 4, 'Z': 10
-    }
-    for letra in palabra.upper():
-        puntaje += letra_puntos.get(letra, 0)
-    return puntaje
+        return puntaje * multiplicador_palabra
